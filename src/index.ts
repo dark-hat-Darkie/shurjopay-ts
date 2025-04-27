@@ -2,33 +2,13 @@
 import axios, { AxiosError } from "axios";
 import moment from "moment";
 import { createLogger, format, transports, Logger } from "winston";
-import { ShurjoPayTransaction, ShurjoPayVerificationResponse } from "./types";
+import {
+  Credentials,
+  ShurjoPayTransaction,
+  ShurjoPayVerificationResponse,
+  SPToken,
+} from "./types";
 const { combine, timestamp, label, printf } = format;
-
-interface TokenData {
-  token: string;
-  token_type: string;
-  TokenCreateTime: string;
-  expires_in: number;
-}
-
-interface SPToken {
-  token: string;
-  token_type: string;
-  token_create_time: string;
-  token_valid_duration: number;
-}
-
-interface Credentials {
-  root_url: string;
-  merchant_username: string;
-  merchant_password: string;
-  merchant_key_prefix: string;
-  return_url: string;
-  token_url: string;
-  verification_url: string;
-  payment_status_url: string;
-}
 
 interface CheckoutParams {
   [key: string]: any;

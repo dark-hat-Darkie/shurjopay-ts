@@ -53,3 +53,21 @@ export interface ShurjoPayVerificationResponse {
   value3: string; // Additional field
   value4: string; // Additional field
 }
+
+export interface SPToken {
+  token: string;
+  token_type: string;
+  token_create_time: string;
+  token_valid_duration: number;
+}
+
+export interface Credentials {
+  root_url: string;
+  merchant_username: string;
+  merchant_password: string;
+  merchant_key_prefix: string;
+  return_url: string;
+  token_url: string;
+  verification_url: string;
+  payment_status_url: string;
+}
